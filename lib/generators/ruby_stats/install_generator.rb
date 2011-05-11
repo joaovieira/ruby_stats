@@ -56,6 +56,12 @@ module RubyStats
 		  raise "ActiveRecord::Metric does not exist."
 		end
 	  end
+
+          def copy_javascripts
+            copy_file "bluff/bluff-min.js", "public/javascripts/bbluff-min.js"
+	    copy_file "bluff/excanvas.js", "public/javascripts/cexcanvas.js" 
+            copy_file "bluff/js-class.js", "public/javascripts/ajs-class.js" 
+          end  
 	  
 	  def end_install
 		puts "#{RubyStats::Metadata::ANALYSER}: #{RubyStats::Metadata::PROGRAMMING_LANGUAGE} #{RubyStats::Metadata::NAME} sucessfully installed!"
