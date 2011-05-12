@@ -2,7 +2,6 @@ $:.push File.expand_path("../../templates", __FILE__)
 require 'metadata'
 
 require 'rails/generators'
-#require 'rails/generators/migration'
 
 
 module RubyStats

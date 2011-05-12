@@ -1,4 +1,3 @@
-require 'ruby_stats/config'
 require 'metric_fu'
 
 module RubyStats
@@ -8,12 +7,15 @@ module RubyStats
       project_metrics_dir = File.join(dir, 'tmp', 'ruby_stats')
 
       # Configure metric fu paths
-      MetricFu::Configuration.run do |config|    
+      MetricFu::Configuration.run do |config|
+  	config.metrics = [:stats]
+  	config.graphs = [:stats]
+  	config.template_class = RstatsTemplate
         config.base_directory = project_metrics_dir
 	config.data_directory = File.join(project_metrics_dir, '_data')
 	config.output_directory = File.join(project_metrics_dir, 'output')
         config.code_dirs = [File.join(dir, 'app'), File.join(dir, 'lib')]
-      end     
+      end  
 
       # Run metric fu!
       MetricFu.metrics.each {|metric| MetricFu.report.add(metric) }
