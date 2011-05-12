@@ -62,6 +62,11 @@ module RubyStats
 	    copy_file "bluff/excanvas.js", "public/javascripts/cexcanvas.js" 
             copy_file "bluff/js-class.js", "public/javascripts/ajs-class.js" 
           end  
+
+	  def copy_stylesheets
+	    copy_file "css/default.css", "public/stylesheets/default.css" 
+	    copy_file "css/syntax.css", "public/stylesheets/syntax.css" 
+	  end
 	  
 	  def end_install
 		puts "#{RubyStats::Metadata::ANALYSER}: #{RubyStats::Metadata::PROGRAMMING_LANGUAGE} #{RubyStats::Metadata::NAME} sucessfully installed!"

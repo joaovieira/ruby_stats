@@ -18,7 +18,7 @@ module RubyStats
       # Run metric fu!
       MetricFu.metrics.each {|metric| MetricFu.report.add(metric) }
       MetricFu.report.save_output(MetricFu.report.to_yaml, MetricFu.base_directory, "report.yml")
-      MetricFu.report.save_output(MetricFu.report.to_yaml, MetricFu.data_directory, "#{Time.now.strftime("%Y%m%d")}.yml")
+      MetricFu.report.save_output(MetricFu.report.to_yaml, MetricFu.data_directory, "#{Time.now.strftime("%Y%m%d%H%M")}.yml")
 
       MetricFu.graphs.each {|graph| MetricFu.graph.add(graph, MetricFu.graph_engine) }
       MetricFu.graph.generate
