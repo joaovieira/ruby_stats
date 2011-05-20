@@ -8,4 +8,5 @@ module RubyStats
   require 'templates/rstats/rstats_template'
   require 'ruby_stats/analyser'
   require 'extensions/metric_fu/stats_bluff_grapher'
+  require 'extensions/metric_fu/stats'
 end
