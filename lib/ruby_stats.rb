@@ -9,4 +9,8 @@ module RubyStats
   require 'ruby_stats/analyser'
   require 'extensions/metric_fu/stats_bluff_grapher'
   require 'extensions/metric_fu/stats'
+  
+  NAME = 'Statistics'
+  PROGRAMMING_LANGUAGE = "Ruby"
+  ANALYSER = self.name.split('::').first
 end

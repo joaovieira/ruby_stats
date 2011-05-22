@@ -1,1 +1,1 @@
-module RubyStats  VERSION = "0.0.2"end
+module RubyStats  VERSION = "0.0.5"end

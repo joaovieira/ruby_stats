@@ -4,14 +4,15 @@ module RubyStats
   class Analyser
 
     def self.run(results_dir, date)
-      # Configure metric fu paths
+      # MetricFu local configurations
       MetricFu::Configuration.run do |config|
         config.base_directory = File.join(results_dir, 'metrics')
-	config.data_directory = File.join(config.base_directory, '_data')
-	config.output_directory = File.join(config.base_directory, 'output', "#{date.strftime("%Y%m%d%H%M")}", 'ruby_stats')	
-  	config.template_class = RstatsTemplate	
-	config.metrics = [:stats]
-  	config.graphs = [:stats]
+	    config.data_directory = File.join(config.base_directory, '_data')
+		config.scratch_directory = File.join(config.base_directory, 'scratch')
+	    config.output_directory = File.join(config.base_directory, 'output', "#{date.strftime("%Y%m%d%H%M")}", RubyStats::ANALYSER.underscore)	
+  	    config.template_class = RstatsTemplate	
+	    config.metrics = [:stats]
+  	    config.graphs = [:stats]
       end  
 
       # Run metric fu!
