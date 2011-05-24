@@ -13,4 +13,5 @@ module RubyStats
   NAME = 'Statistics'
   PROGRAMMING_LANGUAGE = "Ruby"
   ANALYSER = self.name.split('::').first
+  OUTPUT_NAME = 'stats'
 end

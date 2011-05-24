@@ -5,5 +5,5 @@
 
 <canvas id="<%= RubyStats::NAME %>"></canvas>
 <script type="text/javascript">
-  <%= File.read(Dir[File.join(dir, RubyStats::ANALYSER.underscore, '*.js')].first).html_safe %>
+  <%= File.read(Dir[File.join(dir, RubyStats::ANALYSER.underscore, "#{RubyStats::OUTPUT_NAME}.js")].first).html_safe %>
 </script>
